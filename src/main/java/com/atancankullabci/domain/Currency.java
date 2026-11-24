@@ -14,4 +14,13 @@ public enum Currency {
     public String getCurrencyCode() {
         return currencyCode;
     }
+
+    public static Currency fromCurrencyCode(String currencyCode) {
+        for (Currency currency : Currency.values()) {
+            if (currency.getCurrencyCode().equals(currencyCode)) {
+                return currency;
+            }
+        }
+        return null;
+    }
 }
